@@ -1,7 +1,7 @@
 DB: ankeborg
 
 TABLE: people
-
+-------------------------------------
 id			name
 1			Kalle Anka
 2			Musse Pigg
@@ -11,7 +11,7 @@ id			name
 6			Kajsa Anka
 
 TABLE: cars
-
+-------------------------------------
 id			name			person_id
 1			BMW				1
 2			Volvo			2
@@ -20,12 +20,12 @@ id			name			person_id
 5			Jeep			0
 
 
-LEFT JOIN (samma som LEFT OUTER JOIN)
+* LEFT JOIN (samma som LEFT OUTER JOIN)
 // Väljer alla personer och skriver ut vad dessa har för bilar (även om det är NULL)
-SELECT people.name, cars.name FROM people LEFT JOIN cars ON people.id=cars.person_id
+'SELECT people.name, cars.name FROM people LEFT JOIN cars ON people.id = cars.person_id'
 
 name					name
-----------------------------
+-------------------------------------
 Kalle Anka				BMW
 Musse Pigg				Volvo
 Janne Långben			NULL
@@ -35,12 +35,12 @@ Kajsa Anka				NULL
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-RIGHT JOIN (samma som RIGHT OUTER JOIN)
+* RIGHT JOIN (samma som RIGHT OUTER JOIN)
 // Väljer alla bilar och skriver ut vilka personer som har dessa
-SELECT people.name, cars.name FROM people RIGHT JOIN cars ON people.id=cars.person_id
+'SELECT people.name, cars.name FROM people RIGHT JOIN cars ON people.id = cars.person_id'
 
 name					name
-----------------------------
+-------------------------------------
 Kalle Anka				BMW
 Musse Pigg				Volvo
 Klasse Häst				Audi
@@ -49,12 +49,12 @@ NULL					Jeep
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-JOIN (samma som INNER JOIN)
+* JOIN (samma som INNER JOIN)
 // Väljer alla personer som har bilar
-SELECT people.name, cars.name FROM people JOIN cars ON people.id=cars.person_id
+'SELECT people.name, cars.name FROM people JOIN cars ON people.id = cars.person_id'
 
 name					name
-----------------------------
+-------------------------------------
 Kalle Anka				BMW
 Musse Pigg				Volvo
 Klasse Häst				Audi
